@@ -11,67 +11,12 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style.css" />
-    <title>My weather application</title>
-  </head>
-  <body id="weather-body">
-    <div class="weather-app">
-      <header>
-        <form id="search-form">
-          <input
-            type="search"
-            placeholder="Enter a city.."
-            required
-            class="search-input"
-            id="search-input"
-          />
-          <input type="submit" value="Search" class="search-button" />
-        </form>
-      </header>
-      <main>
-        <div class="current-weather">
-          <div>
-            <h1 class="current-city" id="current-city">Paris</h1>
-            <p class="current-details">
-              <span id="time">Thursday 19:18</span>
-              <span id="description">moderate rain</span><br />
-              Humidity:<strong id="humidity">87%</strong>, Wind:
-              <strong id="wind-speed">7.2km/h</strong>
-            </p>
-          </div>
-          <div class="current-temperature">
-            <span id="icon"
-              ><img
-                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
-            /></span>
 
-            <span class="current-temperature-value" id="current-temperature"
-              >24</span
-            ><span class="current-temperature-unit">°C</span>
-          </div>
-        </div>
-        <div class="weather-forecast" id="forecast"></div>
-      </main>
-      <footer>
-        <p>
-          This project was coded by
-          <a href="https://github.com/Aaliyah-Fransman" target="_blank"
-            >Aaliyah Fransman</a
-          >
-          and is
-          <a
-            href="https://github.com/Aaliyah-Fransman/My-Weather-App-Project"
-            target="_blank"
-          >
-            on GitHub</a
-          >
-          and
-          <a href="https://theskycast.netlify.app/?#" target="_blank"
-            >hosted on Netlify</a
-          >
-        </p>
-      </footer>
-    </div>
+    <title>React weather application</title>
+  </head>
+  <body>
     <div id="root"></div>
+
+    <script src="index.js"></script>
   </body>
-  <script src="index.js"></script>
 </html>
