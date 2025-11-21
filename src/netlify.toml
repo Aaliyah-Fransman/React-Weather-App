@@ -1,0 +1,5 @@
+[build]
+publish="dist"
+command="pnpm install && pnpm run build"
+[build.environment]
+NPM_FLAGS="--version"
