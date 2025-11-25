@@ -19,6 +19,7 @@ export default function Weather(props) {
       iconURL:
         response.data.condition?.icon_url ||
         "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+      iconCode: response.data.condition?.icon || "",
     });
   }
   function search() {
