@@ -1,0 +1,46 @@
+import React, { useState, useEffect } from "react";
+import "./WeatherForecast.css";
+import axios from "axios";
+import WeatherForecastDay from "./WeatherForecastDay";
+
+export default function WeatherForecast(props) {
+  const [loaded, setLoaded] = useState(false);
+  const [forecast, setForecast] = useState(null);
+
+  const { lat, lon } = props.coordinates || {};
+
+  useEffect(() => {
+    if (!lat || !lon) return;
+
+    setLoaded(false);
+
+    const apiKey = "3bf4acef0b2d93f6ft3fo21d4644d34a";
+    const apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
+
+    axios
+      .get(apiUrl)
+      .then((response) => {
+        setForecast(response.data.daily);
+        setLoaded(true);
+      })
+      .catch((error) => {
+        console.error("Error fetching forecast:", error);
+      });
+  }, [lat, lon]);
+
+  if (!loaded) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div className="WeatherForecast">
+      <div className="row">
+        {forecast.slice(0, 5).map((dailyForecast, index) => (
+          <div className="col" key={index}>
+            <WeatherForecastDay data={dailyForecast} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
